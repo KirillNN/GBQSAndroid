@@ -22,7 +22,9 @@ public class GameManager {
         circles = new ArrayList<EnemyCircle>();
         for (int i = 1; i < MAX_CIRCLES; i++) {
             EnemyCircle circle;
-            circle = EnemyCircle.getRandomCircle();
+            do {
+                circle = EnemyCircle.getRandomCircle();
+            } while (circle.isInterselect(mainCircleArea));
             circles.add(circle);
         }
         calculateAndSetCircleColor();
