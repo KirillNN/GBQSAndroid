@@ -3,21 +3,33 @@ package peshin.kirill.gbqsandroid;
 public class GameManager {
     private MainCircle mainCircle;
     private CanvasView canvasView;
-    private static int widht;
+    private static int width;
     private static int height;
 
     public GameManager(CanvasView canvasView, int w, int h) {
         this.canvasView = canvasView;
-        widht = w;
+        width = w;
         height = h;
         initMainCircle();
     }
 
+    public static int getWidth() {
+        return width;
+    }
+
+    public static int getHeight() {
+        return height;
+    }
+
     private void initMainCircle() {
-        mainCircle = new MainCircle(widht /2, height / 2);
+        mainCircle = new MainCircle(width / 2, height / 2);
     }
 
     public void onDraw() {
         canvasView.drawCircle(mainCircle);
+    }
+
+    public void onTouchEvent(int x, int y) {
+        mainCircle.moveMainCircleWhenTouchAt(x, y);
     }
 }
