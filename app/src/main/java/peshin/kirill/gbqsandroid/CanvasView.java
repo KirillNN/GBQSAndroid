@@ -60,6 +60,7 @@ public class CanvasView extends View implements iCanvasView {
         if (event.getAction() == MotionEvent.ACTION_MOVE) {
             gameManager.onTouchEvent(x, y);
         }
+
         invalidate();
         return true;
     }

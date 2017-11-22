@@ -1,7 +1,6 @@
 package peshin.kirill.gbqsandroid;
 
 import android.graphics.Color;
-
 import java.util.Random;
 
 public class EnemyCircle extends SimpleCircle{
