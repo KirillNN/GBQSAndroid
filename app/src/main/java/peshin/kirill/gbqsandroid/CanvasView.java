@@ -53,6 +53,11 @@ public class CanvasView extends View implements iCanvasView {
     }
 
     @Override
+    public void redraw() {
+        invalidate();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         int x = (int) event.getX();
         int y = (int) event.getY();
